@@ -1,0 +1,40 @@
+print("Program for Lagrange Interpolation")
+x = []
+y = []
+n = int(input("Enter the number of data points: "))
+for i in range(0, n):
+elect = float(input("Enter the value of x: "))
+x.append(elect)
+print("x =", x)
+for i in range(0, n):
+elect = float(input("Enter the value of y: "))
+y.append (elect)
+print("y =", y)
+xr = float(input("Enter value of x to be interpolated: "))
+fy = 0
+for j in range(0, n):
+num = 1
+den = 1
+for i in range(0, n):
+if i != j:
+num *= (xr - x[i])
+den *= (x[j] - x[i])
+fy = float(fy + (num / den) * y[j])
+print("Value of y at x =", xr, "And value of y is =", fy)
+Output:
+Program for Lagrange Interpolation
+Enter the number of data points: 4
+Enter the value of x: 1
+Enter the value of x: 4
+Enter the value of x: 6
+Enter the value of x: 9
+x = [1.0, 4.0, 6.0, 9.0]
+Enter the value of y: 1
+Enter the value of y: 16
+Enter the value of y: 36
+Enter the value of y: 81
+y = [1.0, 16.0, 36.0, 81.0]
+Enter value of x to be interpolated: 1.5
+Value of y at x = 1.5 And value of y is = 2.25
+******The End******
+=== Code Execution Successful ===
