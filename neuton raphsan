@@ -1,0 +1,20 @@
+x=[]
+y=[]
+n=int(input("no. of data points"))
+for i in range(0,n):
+    car=float(input("vvalue of x:"))
+    x.append(car)
+for i in range(0,n):
+    car =float(input("enter the value y: "))
+    y.append(car)
+xr=float(input("enter value of x interpolated"))
+fy=0
+for j in range(0,n):
+    num=1
+    den=1
+    for i in range(0,n):
+        if i!=j:
+            num*=(xr-x[i])
+            den*=(x[j]-x[i])
+    fy=float(fy+(num/den)*y[j])
+    print("value of y at x =",xr, "vaue of y is  =",fy)
