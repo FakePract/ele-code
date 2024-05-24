@@ -1,0 +1,39 @@
+Input:
+print("Program for Jacobi's Method ")
+def f1(x,y,z):#equation for x
+return 1/20*(17-y0 + 2*z0)
+def f2(x,y,z):#equation for y
+return 1/20*(-18-3*x0+z0)
+def f3(x,y,z):#equation for z
+return 1/20*(25-2*x0+z0)
+n=int(input("Enter the number of iterations: "))
+x0=0
+y0=0
+z0=0
+for i in range (0,n):
+x1=f1(x0,y0,z0)
+y1=f2(x0,y0,z0)
+z1=f3(x0,y0,z0)
+print("Iteration number: ",i+1)
+print(x1,"¥t¥t",y1,"¥t¥t",z1)
+x0=x1
+y0=y1
+z0=z1
+print("*The End*")
+Output:
+Program for Jacobi's Method
+Enter the number of iterations: 6
+Iteration number: 1
+0.8500000000000001 -0.9 1.25
+Iteration number: 2
+1.02 -0.9650000000000001 1.2275
+Iteration number: 3
+1.0210000000000001 -0.991625 1.209375
+Iteration number: 4
+1.02051875 -0.9926812500000001 1.20836875
+Iteration number: 5
+1.0204709375 -0.9926593749999999 1.2083665625
+Iteration number: 6
+1.020469625 -0.9926523125000002 1.208371234375
+*******The End*******
+=== Code Execution Successful ===
