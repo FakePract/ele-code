@@ -1,0 +1,53 @@
+<?php
+$message = "";
+if ($_POST) {
+    $message = ($_POST['username'] === 'user1' && $_POST['password'] === 'password123') 
+        ? "Login successful!" 
+        : "Invalid credentials.";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value.trim();
+
+            if (!username || !password) {
+                alert("Both fields are mandatory.");
+                return false;
+            }
+            if (username.length < 5) {
+                alert("Username must be at least 5 characters.");
+                return false;
+            }
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <form onsubmit="return validateForm()" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+
+    <p><?= htmlspecialchars($message) ?></p>
+</body>
+</html>
